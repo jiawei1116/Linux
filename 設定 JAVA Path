@@ -1,0 +1,8 @@
+vi /etc/profile
+
+移到最下方
+jdk版本自行修改
+
+export PATH=/usr/java/jdk1.7.0_67/bin:$PATH
+export JAVA_HOME="/usr/java/jdk1.7.0_67"
+export CLASSPATH=.:/usr/java/jdk1.7.0_67

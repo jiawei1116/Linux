@@ -1,3 +1,6 @@
+pg_hba.conf 官方文件
+http://www.postgresql.org/docs/devel/static/auth-pg-hba-conf.html
+
 當我們的程式和資料庫是位於不同的主機時~ 就必須透過TCP/IP來遠端連線資料庫~
 
 或是你的PostgreSQL是裝在VMware的Linux之中，而你想透過Windows的pgAdmin III資料庫管理程式來操作的話~ 都需要做這設定來遠端連線~

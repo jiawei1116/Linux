@@ -1,0 +1,22 @@
+當我們的程式和資料庫是位於不同的主機時~ 就必須透過TCP/IP來遠端連線資料庫~
+
+或是你的PostgreSQL是裝在VMware的Linux之中，而你想透過Windows的pgAdmin III資料庫管理程式來操作的話~ 都需要做這設定來遠端連線~
+
+允許遠端TCP/IP連線
+修改「/usr/local/pgsql/data/pg_hba.conf」，並加入下列格式的設定值：
+  vim /var/lib/pgsql/data/pg_hba.conf
+
+host    all     all     [ip位址]/[subnet mask]  trust
+設定方式如下：
+
+vi /usr/local/pgsql/data/pg_hba.conf
+host    all     all     192.168.0.0/16  trust    -->改為要連線之ip
+接著修改「/usr/local/pgsql/data/postgresql.conf」
+或 vim /var/lib/pgsql/data/postgresql.conf
+
+vi /usr/local/pgsql/data/postgresql.conf
+找出「listen_addresses」和「port」，把這兩行的註解取消並修改成下列：
+
+listen_addresses = '*'
+port = 5432
+最後重新啟動你的PostgreSQL即可。

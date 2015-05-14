@@ -1,0 +1,23 @@
+1.核心查詢:
+uname -a
+結果:
+Linux 2.x.x-x.x.x.el5xen #1 
+
+cat /proc/version 
+結果:
+Linux version 2.x.x-x.x.x.el5xen  
+
+
+2.現在使用套裝系統版本查詢
+cat /etc/issue
+結果:
+CentOS release 5.4 (Final)
+Kernel \r on an \m
+
+lsb_release -a
+結果:
+LSB Version:    :core-x.x-ia32:core-x.x-noarch:graphics-x.x-ia32:graphics-x.x-noarch
+Distributor ID:    CentOS
+Description:    CentOS release 5.4 (Final)
+Release:    5.4
+Codename:    Final

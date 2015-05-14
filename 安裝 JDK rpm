@@ -1,0 +1,21 @@
+nstallation of the 64-bit JDK on RPM-based Linux Platforms
+This procedure installs the Java Development Kit (JDK) for 64-bit RPM-based Linux platforms, such as Red Hat and SuSE, using an RPM binary file (.rpm) in the system location. You must be root to perform this installation.
+
+These instructions use the following file:
+
+    jdk-7u<version>-linux-x64.rpm
+1. Download the file. Before the file can be downloaded, you must accept the license agreement.
+
+2. Become root by running su and entering the super-user password.
+
+3. Uninstall any earlier installations of the JDK packages.
+
+    # rpm -e <package_name>
+4. Install the package.
+
+    # rpm -ivh jdk-7u<version>-linux-x64.rpm
+To upgrade a package:
+    # rpm -Uvh jdk-7u<version>-linux-x64.rpm
+5. Delete the .rpm file if you want to save disk space.
+
+6. Exit the root shell. No need to reboot.

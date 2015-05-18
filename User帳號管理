@@ -1,0 +1,18 @@
+範例：完全參考預設值建立一個使用者，名稱為 vbird1
+[root@www ~]# useradd vbird1
+[root@www ~]# ll -d /home/vbird1
+drwx------ 4 vbird1 vbird1 4096 Feb 25 09:38 /home/vbird1
+# 預設會建立使用者家目錄，且權限為 700 ！這是重點！
+
+範例：請 root 給予 vbird2 密碼
+[root@www ~]# passwd vbird2
+Changing password for user vbird2.
+New UNIX password: <==這裡直接輸入新的密碼，螢幕不會有任何反應
+BAD PASSWORD: it is WAY too short <==密碼太簡單或過短的錯誤！
+Retype new UNIX password:  <==再輸入一次同樣的密碼
+passwd: all authentication tokens updated successfully.  <==竟然還是成功修改了！
+
+
+範例：刪除 vbird2 ，連同家目錄一起刪除
+[root@www ~]# userdel -r vbird2
+這個指令下達的時候要小心了！通常我們要移除一個帳號的時候，你可以手動的將 /etc/passwd 與 /etc/shadow 裡頭的該帳號取消即可！一般而言，如果該帳號只是『暫時不啟用』的話，那麼將 /etc/shadow 裡頭帳號失效日期 (第八欄位) 設定為 0 就可以讓該帳號無法使用，但是所有跟該帳號相關的資料都會留下來！ 使用 userdel 的時機通常是『你真的確定不要讓該用戶在主機上面使用任何資料了！』

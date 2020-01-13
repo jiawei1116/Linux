@@ -9,3 +9,6 @@ sudo ss -uln # udp
 sudo ss -ulpn # udp 含 process name
 sudo netstat -ulpn # udp 含 process name
 sudo netstat -tulpn # 含 tcp
+
+multicast ip 查詢方法:
+netstat -gn

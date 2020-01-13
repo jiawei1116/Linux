@@ -1,0 +1,11 @@
+查listen port
+netstat -tulpn | grep LISTEN
+
+查詢防火牆tcp/udp
+iptables -t nat -L
+
+UDP 跟 TCP 一樣，主要使用 netstat
+sudo ss -uln # udp
+sudo ss -ulpn # udp 含 process name
+sudo netstat -ulpn # udp 含 process name
+sudo netstat -tulpn # 含 tcp
